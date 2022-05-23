@@ -7,3 +7,9 @@ const modelo = mongoose.Schema({
     email:String, 
     senha:String
 })
+
+//gravar as estrutura no model usuários
+const usuarios = mongoose.model('usuarios', modelo)
+
+//exportar os dados para acesso externo
+module.exports = usuarios

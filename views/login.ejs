@@ -21,7 +21,7 @@
                     <input type="email" name="email" id="" class="form-control" placeholder="Email">
                     <div class="input-group">
                     <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
-                    <i class="bi bi-eye-fill btn btn-outline-secondary" id="troca"></i> <!-- bi- bootstrap icons --></div>
+                    <i class="bi bi-eye-fill btn btn-outline-dark" id="troca"></i> <!-- bi- bootstrap icons --></div>
                     <input type="submit" value="Entrar" class="btn btn-dark botao">
                 </form>
                 <a href="/registro" class="btn btn-dark botao"> Registrar </a>
@@ -36,7 +36,6 @@
             var tipo = senha.getAttribute("type") === "password" ?
             "text" : "password"
             senha.setAttribute("type",tipo)
-
             trocaTipo.classList.toggle("bi-eye-slash-fill")
         })
     </script>

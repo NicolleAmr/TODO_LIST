@@ -1,5 +1,5 @@
 //importar o mongoose
-const mongoose = require('require')
+const mongoose = require('mongoose')
 
 //script de conexão
 const conn = async()=>{
@@ -8,3 +8,4 @@ const conn = async()=>{
 
 //exportar as informações para acesso externo
 module.exports = conn
+
