@@ -11,11 +11,11 @@
 <body>
     <div class="container">
         <h1 class="text-center">Lista de Atividades</h1>
-        <h3 class="text-center">Usuarios: <%=nome%></h3>
+        <h3 class="text-center">Usuário: <%=nome%></h3>
         <div class="row">
             <div class="col-sm text-center">
                 <h3 class="text-center">Cadastrar</h3>
-                <form action="" method="POST" class="form-control">
+                <form action="/atividades" method="POST" class="form-control">
                     <div class="form-floating">
                         <input type="date" name="data" id="floatingInput" class="form-control" placeholder="Data">
                         <label for="floatingInput">Data de Entrega</label>
@@ -31,14 +31,17 @@
                     </select>
                     <label for="floatingSelect">Tipo de Atividade</label>
                     </div>
+                    <label for="" class="form-control">Como entregar:</label>
                     <input type="radio" name="entrega" class="form-check-input" id="" value="tarefa">Tarefa no Teams
                     <input type="radio" name="entrega" class="form-check-input" id="" value="chat">Chat do Teams
                     <input type="radio" name="entrega" class="form-check-input" id="" value="email">Email
                     <input type="radio" name="entrega" class="form-check-input" id="" value="formulario">Forms
-                    
-                    <input type="submit" value="Registro" class="btn btn-info">
+                    <label for="" class="form-control">Orientações:</label>
+                    <textarea name="orientacao" id="" cols="30" rows="10" class="form-control"></textarea>
+
+                    <input type="submit" value="Gravar" class="btn btn-dark botao">
                 </form>
-                <a href="/login"class="btn btn-info botao">Login</a>
+                
             </div>
         </div>
     </div>
