@@ -25,10 +25,10 @@
                 <div class="form-floating">
                 <select name="tipo" id="" name="tipo" class="form-control">
                     <option value="0">Selecione...</option>
-                    <option value="1">AC</option>
-                    <option value="2">AT</option>
-                    <option value="3">REC</option>
-                    <option value="4">EXAME</option>
+                    <option value="AC">AC</option>
+                    <option value="AT">AT</option>
+                    <option value="REC">REC</option>
+                    <option value="EXAME">EXAME</option>
                 </select>
                 <label for="floatingSelect">Tipo de Atividade</label>
                 </div>
@@ -40,6 +40,7 @@
                         <option value="INW">INW</option>
                         <option value="LPL">LPL</option>
                         <option value="ING">ING</option>
+                        <option value="HeG">HeG</option>
                     </select>
                     <label for="floatingSelect">Disciplina</label>
                 </div>
@@ -61,7 +62,7 @@
                     <div class="card-body">
                         <div class="card-title text-dark">Tipo: <%=dados[n].tipo%></div>
                         <div class="card-text text-dark">Disciplina: <%=dados[n].disciplina%></div>
-                        <div class="card-subtitle text-dark">Entrega:<%=dados[n].entrega%></div>
+                        <div class="card-subtitle text-dark">Entrega: <%=dados[n].entrega%></div>
                         <div class="card-text text-dark">Orientações: <%=dados[n].instrucoes%></div>
                     </div>
                     <div class="card-footer">

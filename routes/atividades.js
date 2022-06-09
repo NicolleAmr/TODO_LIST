@@ -9,7 +9,7 @@ module.exports = (app)=>{
         //buscar o nome na collection usuarios
         var user = await usuarios.findOne({_id:id})
         //buscar todas as atividades desse ususário 
-        var buscar = await atividades.find({usuario:id}) //esse find q gera os dados
+        var buscar = await atividades.find({usuario:id, status:0}) //esse find q gera os dados
         //console.log(buscar)
         res.render('atividades.ejs',{nome:user.nome,id:user._id,dados:buscar})
     })
@@ -40,9 +40,9 @@ module.exports = (app)=>{
     app.get("/excluir", async(req,res)=>{
         //recuperar o parâmetro id da barra de endereço
         var id = req.query.id
-        var excluir = await atividades.findOneAndRemove({ //pd ser findOneAndDelete tbm, faz same coisa
+        var excluir = await atividades.findOneAndUpdate({ //pd ser findOneAndDelete tbm, faz same coisa
             _id:id
-        })
+        },{status:3})
         //voltar para a página atividades
         //res.render('atividades.ejs',{nome:dados.nome,id:dados.id,dados:buscar})
         //res.send("Atividade Excluída!!")
