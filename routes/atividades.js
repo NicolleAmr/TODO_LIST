@@ -72,4 +72,17 @@ module.exports = (app)=>{
         //redirecionar para a rota atividades
         res.redirect('/atividades?id='+entregue.usuario)
     })
+
+    //entrega atividades
+    app.get("/desfazer", async(req,res)=>{
+        //recuperar o parâmetro id da barra de endereço
+        var id = req.query.id
+        var desfazer = await atividades.findOneAndUpdate(//pd ser findOneAndDelete tbm, faz same coisa
+            {_id:id},
+            {status:0}
+        )
+
+        //redirecionar para a rota atividades
+        res.redirect('/atividades?id='+desfazer.usuario)
+    })
 }
