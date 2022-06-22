@@ -95,13 +95,17 @@ module.exports = (app)=>{
         })
 
     app.post('/alterar', async(req,res)=>{
-        //qual atividade atualizada?
-        var id_a = req.query.id
+        //qual atividade atualizada? (tirou essa atividade)
+        //var id_a = req.query.id - variavel is inutil, but i like dela, so vai ficar here <3
+        
         //quais as informações digitadas?
         var infos = req.body
+        
+        //console.log(id_a) - mostrar que não tem o caralho {IS UNDEFINED} - inutil
+
         //gravar as alterações na collection atividade
         var gravar = await atividades.findOneAndUpdate(
-            {_id:id_a},
+            {_id:infos.id_a},
             {   data:infos.data,
                 tipo:infos.tipo,
                 disciplina:infos.disciplina,
@@ -109,7 +113,7 @@ module.exports = (app)=>{
                 instrucoes:infos.orientacao
             }        
         )
-        history.back()
+        res.redirect('/atividades?id='+infos.id)
     })
      
 
