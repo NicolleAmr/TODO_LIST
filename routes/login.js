@@ -21,10 +21,13 @@ module.exports = (app)=>{
         if(!comparar){
             return res.send("Senha incorreta")
         }
+        
         //redirecionar para a rota get atividades
         res.redirect('/atividades?id='+procurar._id)
     })
 }
+
+//dados.id - formulário hidden-id 
 //req.body é uma informação que vem pelo corpo do formularip
 //req.query é pela barra de endereço
 //no var procurar faz um find dentro da tabela usuarios, por isso consegue ter acesso ao banco de dados e ao endereço correspondente
